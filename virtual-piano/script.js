@@ -128,7 +128,7 @@ window.addEventListener('keyup', (event) => {
     };
 });
 
-piano.addEventListener('mouseover', (event) => {
+piano.addEventListener('mousedown', (event) => {
     if (event.target.classList.contains('piano-key')) {
         const note = event.target.dataset.note;
         const src = `assets/audio/${note}.mp3`;
@@ -183,3 +183,15 @@ letters.addEventListener('click', (event) => {
     )
 }
 )
+
+// FULLSCREEAN
+
+
+const buttonFull = document.querySelector('.fullscreen');
+buttonFull.addEventListener('click', (event) => {
+    if (document.fullscreen) {
+    document.exitFullscreen();
+} else {
+    document.documentElement.requestFullscreen();
+};
+});
